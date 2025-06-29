@@ -1,0 +1,146 @@
+---
+layout: default
+---
+
+<article class="app-detail">
+    <header class="app-header">
+        {% if page.icon %}
+        <img src="{{ page.icon }}" alt="{{ page.title }} icon" class="app-icon-large">
+        {% endif %}
+        <div class="app-info">
+            <h1 class="app-title-large">{{ page.title }}</h1>
+            <p class="app-description-large">{{ page.description }}</p>
+            {% if page.links %}
+            <div class="app-links">
+                {% for link in page.links %}
+                <a href="{{ link.url }}" class="app-link {% if link.primary %}primary{% endif %}" 
+                   {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+                    {{ link.text }}
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    {% if page.screenshots %}
+    <section class="app-screenshots">
+        <h2>Screenshots</h2>
+        <div class="screenshot-grid">
+            {% for screenshot in page.screenshots %}
+            <img src="{{ screenshot }}" alt="{{ page.title }} screenshot" class="screenshot">
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <div class="app-content">
+        {{ content }}
+    </div>
+
+    {% if page.tech_stack %}
+    <section class="tech-stack">
+        <h2>Tech Stack</h2>
+        <div class="tech-tags">
+            {% for tech in page.tech_stack %}
+            <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+</article>
+
+<style>
+.app-detail {
+    max-width: 100%;
+}
+
+.app-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.app-icon-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.app-info {
+    flex: 1;
+}
+
+.app-title-large {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.app-description-large {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.app-screenshots {
+    margin-bottom: 3rem;
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.screenshot {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.app-content {
+    margin-bottom: 3rem;
+}
+
+.tech-stack {
+    margin-bottom: 2rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    padding: 0.3rem 0.8rem;
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+    .app-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .app-title-large {
+        font-size: 2rem;
+    }
+    
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
