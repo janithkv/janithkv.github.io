@@ -1,61 +1,24 @@
-#
-# This file contains configuration flags to customize your site
-#
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
 
-# Name of your site (displayed in the header)
-name: Janith's
-
-# Name of the author
-author: Janith KV
-
-# Short bio or description (displayed in the header)
+title: Janith's
 description: A technocrat's journey through code, ideas, and digital innovation
+show_downloads: true
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://github.com/janithkv.png
+author:
+  name: Janith KV
+  email: your-email@domain.com
 
-#
-# Flags below are optional
-#
-
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email:
-  facebook:
-  flickr:
-  github: janithkv
-  instagram:
-  linkedin: 
-  pinterest:
-  rss: rss
-  twitter:
-  stackoverflow: 
-  youtube:
-  googleplus:
-  playconsole:
-  mastodon:
-
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus: 
-
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
-
-# For newer "GA4" analytics, use the following instead of the "UA" entry above
-#google_analytics_ga4: G-GABC1DEFG
-
-# Your website URL (e.g. http://amitmerchant1990.github.io or http://www.amitmerchant.com)
-# Used for Sitemap.xml and your RSS feed
-url: https://janithkv.github.io
-enforce_ssl: https://janithkv.github.io
-
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
+github:
+  is_project_page: false
+  is_user_page: true
+  owner_name: janithkv
+  owner_url: https://github.com/janithkv
+  repository_name: janithkv.github.io
+  repository_url: https://github.com/janithkv/janithkv.github.io
+  zip_url: https://github.com/janithkv/janithkv.github.io/zipball/main
+  tar_url: https://github.com/janithkv/janithkv.github.io/tarball/main
 
 #
 # !! You don't need to change any of the configuration flags below !!
