@@ -12,6 +12,9 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+# GitHub Pages specific
+theme: minima
+
 collections:
   apps:
     output: true

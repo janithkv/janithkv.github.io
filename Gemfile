@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.0"
+# Use GitHub Pages gem for compatibility
+gem "github-pages", group: :jekyll_plugins
 gem "minima", "~> 2.5"
 
 group :jekyll_plugins do
