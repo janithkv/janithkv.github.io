@@ -94,6 +94,18 @@ collections:
     output: true
     permalink: /apps/:name/
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "apps"
+    values:
+      layout: "app"
+
 paginate: 6
 paginate_path: /page:num/
 
