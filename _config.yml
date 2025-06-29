@@ -13,10 +13,6 @@ navigation:
     url: /apps/
   - title: About
     url: /about/
-  - title: Archive
-    url: /archive/
-  - title: Categories
-    url: /categories/
 
 author:
   name: Janith KV

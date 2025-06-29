@@ -1,7 +1,7 @@
 ---
 title: Crowbar
 description: Clean interface. Fast search. Smart cleanup. Minimalist Chrome extension for efficient browser navigation and tab management.
-icon: /assets/images/crowbar-icon.png
+icon: /images/crowbar-icon.png
 links:
   - text: "GitHub"
     url: "https://github.com/janithkv/crowbar"
