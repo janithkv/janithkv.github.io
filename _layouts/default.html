@@ -1,63 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <nav class="nav">
-                <a href="/" class="nav-brand">{{ site.title }}</a>
-                <div class="nav-links">
-                    <a href="/">Home</a>
-                    <a href="/apps/">Apps</a>
-                    <a href="/about/">About</a>
-                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-                        <span class="theme-icon">🌙</span>
-                    </button>
-                </div>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    {% seo title=false %}
+    {% include meta.html %}
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/images/favicon-32x32.png">
+    {% include analytics_head.html %}
+  </head>
+
+  <body>
+    <div id="bar"></div>
+    <div class="wrapper-container">
+      <div class="wrapper-masthead">
+        <div class="container">
+          <header class="masthead clearfix">
+            <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.baseurl }}{{ site.avatar }}" alt="{{ site.title }}" /></a>
+
+            <div class="site-info">
+              <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+              <p class="site-description">{{ site.description }}</p> 
+            </div>
+
+            <nav>
+              <a href="{{ site.baseurl }}/">Home</a>
+              <a href="{{ site.baseurl }}/apps">Apps</a>
+              <a href="{{ site.baseurl }}/search">Search</a>
+              <a href="{{ site.baseurl }}/about">About</a>
+              <a href="{{ site.baseurl }}/archive">Archive</a>
             </nav>
-        </header>
+          </header>
+        </div>
+      </div>
 
-        <main class="main">
-            {{ content }}
-        </main>
+      <div class="wrapper-main">
+        <div id="main" role="main" class="container">
+          {{ content }}
+        </div>
+      </div>
 
-        <footer class="footer">
-            <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. Built with Jekyll.</p>
-        </footer>
+      <div class="wrapper-footer">
+        <div class="container">
+          <footer class="footer">
+            {% include svg-icons.html %}
+          </footer>
+        </div>
+      </div>
     </div>
 
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.querySelector('.theme-icon');
-            
-            if (body.classList.contains('dark-theme')) {
-                body.classList.remove('dark-theme');
-                localStorage.setItem('theme', 'light');
-                themeIcon.textContent = '🌙';
-            } else {
-                body.classList.add('dark-theme');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.textContent = '☀️';
-            }
-        }
-
-        // Initialize theme
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            document.body.classList.add('dark-theme');
-            document.querySelector('.theme-icon').textContent = '☀️';
-        }
-    </script>
-</body>
+    {% include analytics.html %}
+  </body>
 </html>
