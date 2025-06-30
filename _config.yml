@@ -3,7 +3,7 @@ plugins:
 - jekyll-remote-theme
 
 title: Janith's
-description: Apps, Thoughts and all things Fun ...
+description: Thoughts (and | which are) Apps
 show_downloads: false
 
 navigation:
@@ -11,7 +11,6 @@ navigation:
     url: /
   - title: Apps
     url: /apps/
-  - title: About
     url: /about/
 
 author:
