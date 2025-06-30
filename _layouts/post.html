@@ -2,18 +2,8 @@
 layout: default
 ---
 
-<article>
-  <header>
-    <h1>{{ page.title }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-      {% if site.author.name %}
-        • by {{ site.author.name }}
-      {% endif %}
-    </p>
-  </header>
+<h1>{{ page.title }}</h1>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
-</article>
+<p><small>{{ page.date | date: "%B %d, %Y" }}{% if site.author.name %} • by {{ site.author.name }}{% endif %}</small></p>
+
+{{ content }}
