@@ -11,6 +11,8 @@ navigation:
     url: /
   - title: Apps
     url: /apps/
+  - title: Thoughts
+    url: /thoughts/
 
 author:
   name: Janith KV
