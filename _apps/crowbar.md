@@ -1,4 +1,5 @@
 ---
+layout: app
 title: Crowbar
 description: Clean interface. Fast search. Smart cleanup. Minimalist Chrome extension for efficient browser navigation and tab management.
 icon: /images/crowbar-icon.png
