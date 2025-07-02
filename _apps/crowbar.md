@@ -53,25 +53,6 @@ git clone https://github.com/janithkv/crowbar.git
 
 **Note:** Works on Windows, macOS, and Linux
 
-## Development
-
-**Tests:**
-```bash
-cd tests && npm test
-```
-
-**Coverage:** ✅ 98.46% statements • ✅ 27 tests passing
-
-**Structure:**
-```
-crowbar/
-├── manifest.json     # Extension manifest
-├── popup.html        # Settings interface  
-├── content.js        # Search overlay
-├── background.js     # Chrome API handler
-└── tests/           # Test suite
-```
-
 ## Design Philosophy
 
 **Minimal UI** • **Keyboard-first** • **Fast search** • **Smart defaults**
