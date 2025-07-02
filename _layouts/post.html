@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<header style="margin-bottom: 2em; border-bottom: 1px solid #eee; padding-bottom: 1em;">
-  <h1 style="margin-bottom: 0.5em;">{{ page.title }}</h1>
-  <p style="color: #666; margin: 0; font-size: 0.9em;">
+<div style="margin-top: 2em; margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #eee;">
+  <h1 style="margin: 0 0 0.5em 0; font-size: 1.5em;">{{ page.title }}</h1>
+  <p style="color: #666; margin: 0; font-size: 0.85em;">
     {{ page.date | date: "%B %d, %Y" }}{% if site.author.name %} • {{ site.author.name }}{% endif %}
   </p>
-</header>
+</div>
 
-<article style="line-height: 1.6; max-width: none;">
+<div style="margin-top: 2em; line-height: 1.6;">
   {{ content }}
-</article>
+</div>
